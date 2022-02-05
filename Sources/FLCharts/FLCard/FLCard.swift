@@ -17,7 +17,7 @@ final public class FLCard: UIView {
     private let headerStackView = UIStackView()
     private let stackView = UIStackView()
     private let contentGuide = UILayoutGuide()
-    private var chartView: FLChart
+    public private(set) var chartView: FLChart
     private var style: FLCardStyle
     
     /// Whether to show the legend. Default is `true`.

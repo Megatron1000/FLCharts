@@ -17,7 +17,7 @@ final public class FLCard: UIView {
     private let headerStackView = UIStackView()
     private let stackView = UIStackView()
     private let contentGuide = UILayoutGuide()
-    public private(set) var chartView: FLChart
+    private var chartView: FLChart
     private var style: FLCardStyle
     
     /// Whether to show the legend. Default is `true`.
@@ -121,9 +121,9 @@ final public class FLCard: UIView {
             guard let averageLabel = averageLabel else { return }
             
             let attributedText = NSMutableAttributedString(string: "avg. ",
-                                                           attributes: [.font: UIFont.preferredFont(for: .footnote, weight: .bold), .foregroundColor: FLColors.darkGray])
+                                                           attributes: [.font: UIFont.preferredFont(for: .footnote, weight: .bold), .foregroundColor: style.secondaryTextColor])
             attributedText.append(NSAttributedString(string: chartView.chartData.formattedAverage,
-                                                     attributes: [.font: UIFont.preferredFont(for: .body, weight: .bold), .foregroundColor: FLColors.black]))
+                                                     attributes: [.font: UIFont.preferredFont(for: .body, weight: .bold), .foregroundColor: style.textColor]))
 
             headerStackView.addArrangedSubview(averageLabel)
             averageLabel.minimumScaleFactor = 0.7

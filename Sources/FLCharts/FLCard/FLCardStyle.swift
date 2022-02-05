@@ -11,6 +11,7 @@ public struct FLCardStyle {
     
     public var backgroundColor: UIColor?
     public var textColor: UIColor?
+    public var secondaryTextColor: UIColor?
     public var cornerRadius: CGFloat = 0
     public var shadow: FLShadow?
 }
